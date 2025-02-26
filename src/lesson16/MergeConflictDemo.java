@@ -14,7 +14,7 @@ public class MergeConflictDemo {
         numbers.add(3);
         numbers.add(4);
         numbers.add(99);
-        numbers.add(2);
+        numbers.add(5);
 
         System.out.println("\n size(): Возвращает количество элементов в множестве.");
         System.out.println("Размер коллекции - " + numbers.size());
