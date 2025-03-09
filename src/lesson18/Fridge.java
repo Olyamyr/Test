@@ -57,24 +57,30 @@ public class Fridge {
      * Вывести наименование продукта, который закончится первым
      */
     public String printFirstExpiredItem() {
-        return Collections.min(
-                products.entrySet(),
-                Comparator.comparingInt(Map.Entry::getValue)
-        ).getKey();
+        int minQuantity = Collections.min(products.values());
+
+        List<String> expiredProducts = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : products.entrySet()) {
+            if (entry.getValue() == minQuantity) {
+                expiredProducts.add(entry.getKey());
+            }
+        }
+        return expiredProducts.getFirst();
     }
 
     /**
      * Вывести наименование продукта, которого больше всего
      */
     public String printMostAbundantProduct() {
-        if (products.isEmpty()) {
-            return null;
+        int maxQuantity = Collections.max(products.values());
+
+        List<String> mostAbundantProducts = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : products.entrySet()) {
+            if (entry.getValue() == maxQuantity) {
+                mostAbundantProducts.add(entry.getKey());
+            }
         }
-
-        Set<Map.Entry<String, Integer>> entries = new HashSet<>(products.entrySet());
-        Map.Entry<String, Integer> maxEntry = Collections.max(entries, Map.Entry.comparingByValue());
-
-        return maxEntry.getKey();
+        return mostAbundantProducts.getFirst();
     }
 
     /**
