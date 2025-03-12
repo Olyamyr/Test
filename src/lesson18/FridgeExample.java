@@ -16,9 +16,9 @@ public class FridgeExample {
         fridge.printAllProductsFromZToA();
 
         System.out.println("\nВес всех продуктов в холодильнике: " + fridge.printTotalWeight() + " грамм");
-        //Вывести вес конкретного продукта в холодильнике
         System.out.println("\nВес банана: " + fridge.printProductWeight("Банан") + " грамм");
-        System.out.println("\nНаименование продукта, который закончится первым: " + fridge.printFirstExpiredItem());
+        //Вывести вес конкретного продукта в холодильнике
+        System.out.println("\nНаименование продукта, который закончится первым: " + fridge.printFirstExpiredItems());
         System.out.println("\nНаименование продукта, которого больше всего: " + fridge.printMostAbundantProduct());
 
         System.out.println("\nВсе продукты (название + вес) по алфавиту от Я до А");

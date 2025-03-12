@@ -44,6 +44,13 @@ public class Fridge {
     public int printTotalWeight() {
         return products.values().stream().mapToInt(Integer::intValue).sum();
     }
+    //Второй вариант
+    //int allWeight = 0;
+    //for (int weight : products.values()) {
+    //    allWeight += weight;
+    //}
+    //return allWeight;
+    //}
 
     /**
      * Вывести вес конкретного продукта в холодильнике
@@ -53,10 +60,19 @@ public class Fridge {
         return products.getOrDefault(product, 0);
     }
 
+    //Второй вариант
+    //if (products.containsKey(product)) {
+    //    return products.get(product);
+    //} else {
+    //.println("Такого продукта нет в холодильнике");
+    //    return -1;
+    //}
+    //}
+
     /**
      * Вывести наименование продукта, который закончится первым
      */
-    public String printFirstExpiredItem() {
+    public String printFirstExpiredItems()  {
         int minQuantity = Collections.min(products.values());
 
         List<String> expiredProducts = new ArrayList<>();
@@ -67,6 +83,22 @@ public class Fridge {
         }
         return expiredProducts.getFirst();
     }
+
+    //Второй вариант
+    //int minWeight = Integer.MAX_VALUE;
+    //for (int weight : products.values()) {
+    //    if (weight < minWeight) {
+    //        minWeight = weight;
+    //    }
+    //}
+    //System.out.println("Продукты, которые закончатся первыми: ");
+    //for (Map.Entry<String, Integer> entry : products.entrySet()) {
+    //    if (entry.getValue() == minWeight) {
+    //        return entry.getKey();
+    //    }
+    //}
+    //return null;
+    //}
 
     /**
      * Вывести наименование продукта, которого больше всего
