@@ -6,7 +6,7 @@ public class Predicate {
     public static void main(String[] args) {
         List<Integer> numbers = List.of(12, 415, 38, 85, 1905, 1005, 1065, 5, 3, 150, 1, 999);
 
-        System.out.println("\nНайдем все числа большие 100, содержащие цифры 1, 5");
+        System.out.println("Найдем все числа большие 100, содержащие цифры 1, 5");
         for (Integer number : numbers) {
             if (number > 100 && number.toString().contains("1") && number.toString().contains("5")) {
                 System.out.println(number);
